@@ -13,17 +13,26 @@ export default function HeroSection() {
       <div
         className="hero-section"
         style={{
-          backgroundImage: `url("/ritikhedaoo1.JPG")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
           height: "100vh",
           width: "100%",
           position: "relative",
           paddingTop: "20px",
+          overflow: "hidden",
         }}
       >
-        {/* Background image using <img> */}
+        <img
+          src="/ritikhedaoo1.JPG"
+          alt="Background"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1,
+          }}
+        />
 
         <div className="hero-inner">
           {/* Navbar */}
