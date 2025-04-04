@@ -142,42 +142,44 @@ export default function HeroSection() {
           My <span className="highlight">Skills</span>
         </h2>
         <div className="skills-grid">
-          <div className="skill-card1">
-            <h3>UI/UX Design</h3>
-            <ul>
-              <li>UX Design</li>
-              <li>User Research</li>
-              <li>Wireframing</li>
-              <li>Prototyping</li>
-              <li>Figma</li>
-              <li>Sketch</li>
-              <li>Postman</li>
-              <li>REST APIs</li>
-            </ul>
+          {/* UI/UX Design */}
+          <div className="skill-card">
+            <h3>🍩 UI/UX Design</h3>
+            <div className="skill-tags">
+              {["UX Design", "User Research", "Wireframing", "Prototyping", "Figma", "Sketch", "Postman", "REST APIs"].map((skill, idx) => (
+                <span key={idx} className="skill-tag">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="skill-card2">
-            <h3>Frontend Development</h3>
-            <ul>
-              <li>ReactJS</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>TailwindCSS</li>
-              <li>Bootstrap</li>
-            </ul>
+
+          {/* Frontend */}
+          <div className="skill-card">
+            <h3>💻 Frontend Development</h3>
+            <div className="skill-tags">
+              {["ReactJS", "HTML5", "CSS3", "TailwindCSS", "Bootstrap"].map((skill, idx) => (
+                <span key={idx} className="skill-tag">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="skill-card3">
-            <h3>Backend Development</h3>
-            <ul>
-              <li>NodeJS</li>
-              <li>Express.js</li>
-              <li>ASP.NET</li>
-              <li>MVC</li>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-            </ul>
+
+          {/* Backend */}
+          <div className="skill-card">
+            <h3>🛠 Backend Development</h3>
+            <div className="skill-tags">
+              {["NodeJS", "Express.js", "ASP.NET", "MVC", "MongoDB", "MySQL"].map((skill, idx) => (
+                <span key={idx} className="skill-tag">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
       <section id="experience" className="experience-section">
         <h2 className="section-title">
           My <span className="highlight">Work</span> Experience
