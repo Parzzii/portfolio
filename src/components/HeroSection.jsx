@@ -268,8 +268,8 @@ export default function HeroSection() {
           <div className="project-grid">
             <div className="project-card">
               <img src="/drinks.png" alt="Drinks Page" />
-              <h4>Drinks Page</h4>
-              <p>UI design for drink app with animation</p>
+              <h4>Figma Concept Projects</h4>
+              <p>UI design on concept app with animation</p>
             </div>
             <div className="project-card">
               <img src="/uncc.png" alt="UNCC Mobile" />
@@ -278,7 +278,7 @@ export default function HeroSection() {
             </div>
             <div className="project-card">
               <img src="/dualsense1.png" alt="UNCC Mobile" />
-              <h4>PS5 DualSense</h4>
+              <h4>Figma Example projects</h4>
               <p>Figma projets on real world examples</p>
             </div>
           </div>
