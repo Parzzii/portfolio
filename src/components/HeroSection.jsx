@@ -274,12 +274,12 @@ export default function HeroSection() {
             <div className="project-card">
               <img src="/uncc.png" alt="UNCC Mobile" />
               <h4>UNCC Mobile App</h4>
-              <p>Mobile app design for students</p>
+              <p>Mobile app design for UNCC students</p>
             </div>
             <div className="project-card">
               <img src="/dualsense1.png" alt="UNCC Mobile" />
               <h4>PS5 DualSense</h4>
-              <p>Mobile app design for students</p>
+              <p>Figma projets on real world examples</p>
             </div>
           </div>
         </div>
