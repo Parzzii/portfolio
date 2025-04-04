@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div
         className="hero-section"
         style={{
-          backgroundImage: `url("/ritikhedaoo1.jpg")`,
+          backgroundImage: `url("/ritikhedaoo1.JPG")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
