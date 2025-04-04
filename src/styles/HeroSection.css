@@ -420,12 +420,20 @@ body {
   padding-left: 20px;
   margin-top: 10px;
 }
+.skill-card1 ul,
+.skill-card2 ul,
+.skill-card3 ul {
+  padding-left: 20px; /* Adjust as needed */
+  margin: 0;
+  list-style-position: inside; /* Keeps bullets inside the box */
+}
 
 .skill-card1,
 .skill-card2,
 .skill-card3 {
   background: rgba(221, 221, 221, 0.7);
   padding: 30px 24px;
+  padding-left: 20px;
   border-radius: 30px;
   width: 280px;
   text-align: left;
