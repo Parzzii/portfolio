@@ -8,6 +8,8 @@ export default function HeroSection() {
   const navItems = ["Home", "Skills", "About", "Projects", "Contact", "Resume"];
   const stars = Array(5).fill(null);
 
+  // Updated Hero Section with orange theme
+
   return (
     <>
       <div
@@ -20,6 +22,8 @@ export default function HeroSection() {
           overflow: "hidden",
         }}
       >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <img
           src="/ritikhedaoo1.JPG"
           alt="Background"
@@ -35,7 +39,6 @@ export default function HeroSection() {
         />
 
         <div className="hero-inner">
-          {/* Navbar */}
           <nav className="navbar">
             {navItems.map((item, idx) => (
               <button
@@ -71,9 +74,7 @@ export default function HeroSection() {
             ))}
           </nav>
 
-          {/* Hero Content */}
           <div className="hero-content">
-            {/* LEFT SIDE */}
             <div className="left-side">
               <div className="hello-bubble">
                 Hello! <span className="hello-squiggle">✨</span>
@@ -107,15 +108,11 @@ export default function HeroSection() {
                     }
                   }}
                 >
-                  Hire me{" "}
-                  <span role="img" aria-label="emoji">
-                    🥳
-                  </span>
+                  Hire me 🥳
                 </button>
               </div>
             </div>
 
-            {/* RIGHT SIDE */}
             <div className="right-side">
               <div className="testimonial-box">
                 <div className="quote">
@@ -182,7 +179,7 @@ export default function HeroSection() {
 
       <section id="experience" className="experience-section">
         <h2 className="section-title">
-          My <span className="highlight">Work</span> Experience
+          <span className="highlight">My</span> Work Experience
         </h2>
 
         <div className="experience-list">
@@ -228,6 +225,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+
       <section className="hire-section">
         <div className="hire-image">
           <img src="/ritik.jpg" alt="Ritik" />
@@ -235,15 +233,23 @@ export default function HeroSection() {
 
         <div className="hire-content">
           <h2 className="hire-title">
-            Why <span className="highlight-orange">Hire</span> me ?
+            Why <span className="highlight-orange">Hire</span> Me?
           </h2>
+
           <p>
-            Growing up I found myself being <span className="highlight-red">creative</span> and <span className="highlight-purple">thinking out of the box</span> and slowly I found myself <span className="highlight-orange">designing and coding</span> and creating real-world websites in my own way.
+            From a young age, I’ve embraced <span className="highlight-red">creativity</span> and a <span className="highlight-purple">problem-solving mindset</span>. Over time, this passion led me to create beautiful, functional, and intuitive digital experiences.
           </p>
+
           <p>
-            I pursued my master's degree to deepen my understanding of <span className="highlight-green">design strategies</span> and the latest industry trends. With skills in UX/UI design, ReactJS, and front-end development, I bring both{" "}
-            <span className="highlight-gold">creativity and technical expertise</span> to the table.
+            My academic journey and real-world projects have shaped me into a<span className="highlight-gold"> hybrid designer-developer</span> — someone who understands both design language and clean code. I specialize in
+            <span className="highlight-green"> UI/UX, ReactJS</span>, and modern front-end development.
           </p>
+
+          <p>
+            I blend <span className="highlight-orange">empathy</span> for users with
+            <span className="highlight-red">technical precision</span> — bringing life to digital products that don’t just work, but feel delightful.
+          </p>
+
           <button
             className="hire-cta"
             onClick={() => {
@@ -256,10 +262,11 @@ export default function HeroSection() {
               }
             }}
           >
-            Hire me 🥳
+            Hire Me 🧠✨
           </button>
         </div>
       </section>
+
       <section id="projects" className="projects-section">
         <h2 className="section-title">My Projects</h2>
 
@@ -298,28 +305,35 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+
       <section id="contact" className="contact-section">
-        <div id="contact" className="contact-section">
-          <div className="contact-row">
-            <div className="contact-item">
-              <FiMail size={20} style={{ marginRight: "8px" }} />
-              <a href="mailto:ritikhedaoo9@gmail.com">ritikhedaoo9@gmail.com</a>
-            </div>
+        <h2 className="contact-title">Let’s Connect ✨</h2>
 
-            <div className="contact-item">
-              <FaLinkedin size={20} style={{ marginRight: "8px" }} />
-              <a href="https://www.linkedin.com/in/ritik-hedaoo" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-            </div>
+        <p className="contact-subtext">I’m always excited to discuss design, tech, or opportunities. Reach out!</p>
 
-            <div className="resume-download">
-              <a href="/Ritik resume 2025.pdf" download className="download-button">
-                <FaFileDownload size={18} style={{ marginRight: "6px" }} />
-                Download Resume
-              </a>
-            </div>
+        <div className="contact-grid">
+          <div className="contact-box">
+            <FiMail size={24} />
+            <a href="mailto:ritikhedaoo9@gmail.com">ritikhedaoo9@gmail.com</a>
           </div>
+
+          <div className="contact-box">
+            <FaLinkedin size={24} />
+            <a href="https://www.linkedin.com/in/ritik-hedaoo" target="_blank" rel="noopener noreferrer">
+              LinkedIn Profile
+            </a>
+          </div>
+
+          <div className="contact-box">
+            <FaFileDownload size={24} />
+            <a href="/Ritik resume 2025.pdf" download>
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div className="contact-footer">
+          <p>Crafted with ❤️ by Ritik Hedaoo</p>
         </div>
       </section>
     </>
