@@ -46,13 +46,16 @@ export default function HeroSection() {
           }}
         />
         {/* Global Hamburger Button */}
-        <div className="hamburger-global">
-          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
+        <div className="hamburger-global" onClick={() => setMenuOpen(!menuOpen)}>
+  <div className={`hamburger ${menuOpen ? "open" : ""}`}>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+        {/* Mobile Menu */}
+        {/* Overlay */}
+        
 
         {menuOpen && (
           <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
