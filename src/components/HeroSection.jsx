@@ -298,8 +298,8 @@ export default function HeroSection() {
           </p>
 
           <p>
-            I blend <span className="highlight-orange">empathy</span> for users with
-            <span className="highlight-red">technical precision</span> — bringing life to digital products that don’t just work, but feel delightful.
+            I blend <span className="highlight-orange">empathy</span> for users with 
+            <span className="highlight-red"> technical precision</span> — bringing life to digital products that don’t just work, but feel delightful.
           </p>
 
           <button
