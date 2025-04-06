@@ -1,10 +1,10 @@
 import React from "react";
 import { ChevronDown, Quote, Star } from "lucide-react";
-import "../styles/HeroSection.css";
 import { FiMail } from "react-icons/fi";
 import { FaLinkedin, FaFileDownload } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
+import "../styles/HeroSection.css";
 
 export default function HeroSection() {
   const navItems = ["Home", "Skills", "About", "Projects", "Contact", "Resume"];
@@ -20,6 +20,7 @@ export default function HeroSection() {
   return (
     <>
       <div
+        id="home"
         className="hero-section"
         style={{
           height: "100vh",
@@ -61,7 +62,7 @@ export default function HeroSection() {
                   key={idx}
                   className={`nav-button ${item === "Home" ? "active" : ""}`}
                   onClick={() => {
-                    const targetId = item === "Skills" ? "skills" : item === "About" ? "experience" : item === "Projects" ? "projects" : item === "Contact" ? "contact" : item === "Resume" ? null : "";
+                    const targetId = item === "Skills" ? "skills" : item === "Home" ? "home" : item === "About" ? "experience" : item === "Projects" ? "projects" : item === "Contact" ? "contact" : item === "Resume" ? null : "";
 
                     if (item === "Resume") {
                       const link = document.createElement("a");
@@ -100,6 +101,7 @@ export default function HeroSection() {
                   else if (item === "About") targetId = "experience";
                   else if (item === "Projects") targetId = "projects";
                   else if (item === "Contact") targetId = "contact";
+                  else if (item === "Home") targetId = "home";
                   else if (item === "Resume") {
                     const link = document.createElement("a");
                     link.href = "/Ritik resume 2025.pdf";
