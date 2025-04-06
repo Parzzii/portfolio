@@ -3,9 +3,16 @@ import { ChevronDown, Quote, Star } from "lucide-react";
 import "../styles/HeroSection.css";
 import { FiMail } from "react-icons/fi";
 import { FaLinkedin, FaFileDownload } from "react-icons/fa";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function HeroSection() {
   const navItems = ["Home", "Skills", "About", "Projects", "Contact", "Resume"];
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
+
   const stars = Array(5).fill(null);
 
   // Updated Hero Section with orange theme
@@ -37,6 +44,49 @@ export default function HeroSection() {
             zIndex: -1,
           }}
         />
+        {/* Global Hamburger Button */}
+        <div className="hamburger-global">
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+
+        {menuOpen && (
+          <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
+            <nav className="mobile-navbar" onClick={(e) => e.stopPropagation()}>
+              {navItems.map((item, idx) => (
+                <button
+                  key={idx}
+                  className={`nav-button ${item === "Home" ? "active" : ""}`}
+                  onClick={() => {
+                    const targetId = item === "Skills" ? "skills" : item === "About" ? "experience" : item === "Projects" ? "projects" : item === "Contact" ? "contact" : item === "Resume" ? null : "";
+
+                    if (item === "Resume") {
+                      const link = document.createElement("a");
+                      link.href = "/Ritik resume 2025.pdf";
+                      link.download = "Ritik resume 2025.pdf";
+                      link.click();
+                      return;
+                    }
+
+                    if (targetId) {
+                      const target = document.getElementById(targetId);
+                      if (target) {
+                        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+                      }
+                    }
+
+                    setMenuOpen(false);
+                  }}
+                >
+                  {item}
+                </button>
+              ))}
+            </nav>
+          </div>
+        )}
 
         <div className="hero-inner">
           <nav className="navbar">
