@@ -246,7 +246,7 @@ export default function HeroSection() {
             <div className="dot orange" />
             <div className="role-card">
               <h4>Teaching Assistant</h4>
-              <p>Developed web app using .NET MVC. Worked on backend in MySQL and frontend HTML and CSS.</p>
+              <p> Guided cross-functional teams by providing targeted Human-Centered Design (HCD) feedback, which helped refine design decisions and improve project outcomes.</p>
             </div>
           </div>
 
