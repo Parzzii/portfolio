@@ -4,7 +4,9 @@ import { FiMail } from "react-icons/fi";
 import { FaLinkedin, FaFileDownload } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useSpring, animated } from "@react-spring/web";
 import "../styles/HeroSection.css";
+import FadeInOnScroll from "./FadeInOnScroll";
 
 export default function HeroSection() {
   const navItems = ["Home", "Skills", "About", "Projects", "Contact", "Resume"];
@@ -47,15 +49,14 @@ export default function HeroSection() {
         />
         {/* Global Hamburger Button */}
         <div className="hamburger-global" onClick={() => setMenuOpen(!menuOpen)}>
-  <div className={`hamburger ${menuOpen ? "open" : ""}`}>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
+          <div className={`hamburger ${menuOpen ? "open" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
         {/* Mobile Menu */}
         {/* Overlay */}
-        
 
         {menuOpen && (
           <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
@@ -78,7 +79,7 @@ export default function HeroSection() {
                     if (targetId) {
                       const target = document.getElementById(targetId);
                       if (target) {
-                        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
                       }
                     }
 
@@ -189,208 +190,216 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <section id="skills" className="skills-section">
-        <h2 className="skills-title">
-          My <span className="highlight">Skills</span>
-        </h2>
-        <div className="skills-grid">
-          {/* UI/UX Design */}
-          <div className="skill-card">
-            <h3>🍩 UI/UX Design</h3>
-            <div className="skill-tags">
-              {["UX Design", "User Research", "Wireframing", "Prototyping", "Figma", "Sketch", "Postman", "REST APIs"].map((skill, idx) => (
-                <span key={idx} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
+      <FadeInOnScroll id="skills">
+        <section className="skills-section">
+          <h2 className="skills-title">
+            My <span className="highlight">Skills</span>
+          </h2>
+          <div className="skills-grid">
+            {/* UI/UX Design */}
+            <div className="skill-card">
+              <h3>🍩 UI/UX Design</h3>
+              <div className="skill-tags">
+                {["UX Design", "User Research", "Wireframing", "Prototyping", "Figma", "Sketch", "Postman", "REST APIs"].map((skill, idx) => (
+                  <span key={idx} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Frontend */}
+            <div className="skill-card">
+              <h3>💻 Frontend Development</h3>
+              <div className="skill-tags">
+                {["ReactJS", "HTML5", "CSS3", "TailwindCSS", "Bootstrap"].map((skill, idx) => (
+                  <span key={idx} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend */}
+            <div className="skill-card">
+              <h3>🛠 Backend Development</h3>
+              <div className="skill-tags">
+                {["NodeJS", "Express.js", "ASP.NET", "MVC", "MongoDB", "MySQL"].map((skill, idx) => (
+                  <span key={idx} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
+        </section>
+      </FadeInOnScroll>
 
-          {/* Frontend */}
-          <div className="skill-card">
-            <h3>💻 Frontend Development</h3>
-            <div className="skill-tags">
-              {["ReactJS", "HTML5", "CSS3", "TailwindCSS", "Bootstrap"].map((skill, idx) => (
-                <span key={idx} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Backend */}
-          <div className="skill-card">
-            <h3>🛠 Backend Development</h3>
-            <div className="skill-tags">
-              {["NodeJS", "Express.js", "ASP.NET", "MVC", "MongoDB", "MySQL"].map((skill, idx) => (
-                <span key={idx} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" className="experience-section">
-        <h2 className="section-title">
-          <span className="highlight">My</span> Work Experience
-        </h2>
-
-        <div className="experience-list">
-          {/* Row 1 */}
-          <div className="experience-row">
-            <div className="experience-box">
-              <h3>UNCC, Charlotte</h3>
-              <p className="date">
-                Jan 2024 – <em>May 2025</em>
-              </p>
-            </div>
-            <div className="dot orange" />
-            <div className="role-card">
-              <h4>Teaching Assistant</h4>
-              <p> Guided cross-functional teams by providing targeted Human-Centered Design (HCD) feedback, which helped refine design decisions and improve project outcomes.</p>
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className="experience-row">
-            <div className="experience-box">
-              <h3>Cognizant, India</h3>
-              <p className="date">Nov 2021 – July 2023</p>
-            </div>
-            <div className="dot dark" />
-            <div className="role-card">
-              <h4>Junior Software Engineer</h4>
-              <p>Developed web app using .NET MVC. Worked on backend in MySQL and frontend HTML and CSS.</p>
-            </div>
-          </div>
-
-          {/* Row 3 */}
-          <div className="experience-row">
-            <div className="experience-box">
-              <h3>Cognizant, India</h3>
-              <p className="date">Feb 2021 – Aug 2021</p>
-            </div>
-            <div className="dot orange" />
-            <div className="role-card">
-              <h4>Intern</h4>
-              <p>Maintained .NET MVC web app and frontend HTML/CSS. Worked on SDLC and enhanced lifecycle efficiency.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="hire-section">
-        <div className="hire-image">
-          <img src="/ritik.jpg" alt="Ritik" />
-        </div>
-
-        <div className="hire-content">
-          <h2 className="hire-title">
-            Why <span className="highlight-orange">Hire</span> Me?
+      <FadeInOnScroll id="experience">
+        <section className="experience-section">
+          <h2 className="section-title">
+            <span className="highlight">My</span> Work Experience
           </h2>
 
-          <p>
-            From a young age, I’ve embraced <span className="highlight-red">creativity</span> and a <span className="highlight-purple">problem-solving mindset</span>. Over time, this passion led me to create beautiful, functional, and intuitive digital experiences.
-          </p>
-
-          <p>
-            My academic journey and real-world projects have shaped me into a<span className="highlight-gold"> hybrid designer-developer</span> — someone who understands both design language and clean code. I specialize in
-            <span className="highlight-green"> UI/UX, ReactJS</span>, and modern front-end development.
-          </p>
-
-          <p>
-            I blend <span className="highlight-orange">empathy</span> for users with 
-            <span className="highlight-red"> technical precision</span> — bringing life to digital products that don’t just work, but feel delightful.
-          </p>
-
-          <button
-            className="hire-cta"
-            onClick={() => {
-              const target = document.getElementById("contact");
-              if (target) {
-                window.scrollTo({
-                  top: target.offsetTop - 10,
-                  behavior: "smooth",
-                });
-              }
-            }}
-          >
-            Hire Me 🧠✨
-          </button>
-        </div>
-      </section>
-
-      <section id="projects" className="projects-section">
-        <h2 className="section-title">My Projects</h2>
-
-        {/* React Projects */}
-        <div className="project-category">
-          <h3 className="category-title">React Projects</h3>
-          <div className="project-grid">
-            <div className="project-card">
-              <img src="/trivia.png" alt="Trivia App" />
-              <h4>Trivia Quiz App</h4>
-              <p>Trivia app using ReactJS, JWT & MongoDB</p>
+          <div className="experience-list">
+            {/* Row 1 */}
+            <div className="experience-row">
+              <div className="experience-box">
+                <h3>UNCC, Charlotte</h3>
+                <p className="date">
+                  Jan 2024 – <em>May 2025</em>
+                </p>
+              </div>
+              <div className="dot orange" />
+              <div className="role-card">
+                <h4>Teaching Assistant</h4>
+                <p> Guided cross-functional teams by providing targeted Human-Centered Design (HCD) feedback, which helped refine design decisions and improve project outcomes.</p>
+              </div>
             </div>
-            {/* Add more React projects here */}
-          </div>
-        </div>
 
-        {/* Figma Projects */}
-        <div className="project-category">
-          <h3 className="category-title">Figma Projects</h3>
-          <div className="project-grid">
-            <div className="project-card">
-              <img src="/drinks.png" alt="Drinks Page" />
-              <h4>Figma Concept Projects</h4>
-              <p>UI design on concept app with animation</p>
+            {/* Row 2 */}
+            <div className="experience-row">
+              <div className="experience-box">
+                <h3>Cognizant, India</h3>
+                <p className="date">Nov 2021 – July 2023</p>
+              </div>
+              <div className="dot dark" />
+              <div className="role-card">
+                <h4>Junior Software Engineer</h4>
+                <p>Developed web app using .NET MVC. Worked on backend in MySQL and frontend HTML and CSS.</p>
+              </div>
             </div>
-            <div className="project-card">
-              <img src="/uncc.png" alt="UNCC Mobile" />
-              <h4>UNCC Mobile App</h4>
-              <p>Mobile app design for UNCC students</p>
-            </div>
-            <div className="project-card">
-              <img src="/dualsense1.png" alt="UNCC Mobile" />
-              <h4>Figma Example projects</h4>
-              <p>Figma projets on real world examples</p>
+
+            {/* Row 3 */}
+            <div className="experience-row">
+              <div className="experience-box">
+                <h3>Cognizant, India</h3>
+                <p className="date">Feb 2021 – Aug 2021</p>
+              </div>
+              <div className="dot orange" />
+              <div className="role-card">
+                <h4>Intern</h4>
+                <p>Maintained .NET MVC web app and frontend HTML/CSS. Worked on SDLC and enhanced lifecycle efficiency.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInOnScroll>
 
-      <section id="contact" className="contact-section">
-        <h2 className="contact-title">Let’s Connect ✨</h2>
-
-        <p className="contact-subtext">I’m always excited to discuss design, tech, or opportunities. Reach out!</p>
-
-        <div className="contact-grid">
-          <div className="contact-box">
-            <FiMail size={24} />
-            <a href="mailto:ritikhedaoo9@gmail.com">ritikhedaoo9@gmail.com</a>
+      <FadeInOnScroll>
+        <section className="hire-section">
+          <div className="hire-image">
+            <img src="/ritik.jpg" alt="Ritik" />
           </div>
 
-          <div className="contact-box">
-            <FaLinkedin size={24} />
-            <a href="https://www.linkedin.com/in/ritik-hedaoo" target="_blank" rel="noopener noreferrer">
-              LinkedIn Profile
-            </a>
+          <div className="hire-content">
+            <h2 className="hire-title">
+              Why <span className="highlight-orange">Hire</span> Me?
+            </h2>
+
+            <p>
+              From a young age, I’ve embraced <span className="highlight-red">creativity</span> and a <span className="highlight-purple">problem-solving mindset</span>. Over time, this passion led me to create beautiful, functional, and intuitive digital experiences.
+            </p>
+
+            <p>
+              My academic journey and real-world projects have shaped me into a<span className="highlight-gold"> hybrid designer-developer</span> — someone who understands both design language and clean code. I specialize in
+              <span className="highlight-green"> UI/UX, ReactJS</span>, and modern front-end development.
+            </p>
+
+            <p>
+              I blend <span className="highlight-orange">empathy</span> for users with
+              <span className="highlight-red"> technical precision</span> — bringing life to digital products that don’t just work, but feel delightful.
+            </p>
+
+            <button
+              className="hire-cta"
+              onClick={() => {
+                const target = document.getElementById("contact");
+                if (target) {
+                  window.scrollTo({
+                    top: target.offsetTop - 10,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              Hire Me 🧠✨
+            </button>
+          </div>
+        </section>
+      </FadeInOnScroll>
+
+      <FadeInOnScroll id="projects">
+        <section className="projects-section">
+          {/* React Projects */}
+          <div className="project-category">
+            <h3 className="category-title">React Projects</h3>
+            <div className="project-grid">
+              <div className="project-card">
+                <img src="/trivia.png" alt="Trivia App" />
+                <h4>Trivia Quiz App</h4>
+                <p>Trivia app using ReactJS, JWT & MongoDB</p>
+              </div>
+              {/* Add more React projects here */}
+            </div>
           </div>
 
-          <div className="contact-box">
-            <FaFileDownload size={24} />
-            <a href="/Ritik resume 2025.pdf" download>
-              Download Resume
-            </a>
+          {/* Figma Projects */}
+          <div className="project-category">
+            <h3 className="category-title">Figma Projects</h3>
+            <div className="project-grid">
+              <div className="project-card">
+                <img src="/drinks.png" alt="Drinks Page" />
+                <h4>Figma Concept Projects</h4>
+                <p>UI design on concept app with animation</p>
+              </div>
+              <div className="project-card">
+                <img src="/uncc.png" alt="UNCC Mobile" />
+                <h4>UNCC Mobile App</h4>
+                <p>Mobile app design for UNCC students</p>
+              </div>
+              <div className="project-card">
+                <img src="/dualsense1.png" alt="UNCC Mobile" />
+                <h4>Figma Example projects</h4>
+                <p>Figma projets on real world examples</p>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+      </FadeInOnScroll>
 
-        <div className="contact-footer">
-          <p>Crafted with ❤️ by Ritik Hedaoo</p>
-        </div>
-      </section>
+      <FadeInOnScroll id="contact">
+        <section className="contact-section">
+          <h2 className="contact-title">Let’s Connect ✨</h2>
+
+          <p className="contact-subtext">I’m always excited to discuss design, tech, or opportunities. Reach out!</p>
+
+          <div className="contact-grid">
+            <div className="contact-box">
+              <FiMail size={24} />
+              <a href="mailto:ritikhedaoo9@gmail.com">ritikhedaoo9@gmail.com</a>
+            </div>
+
+            <div className="contact-box">
+              <FaLinkedin size={24} />
+              <a href="https://www.linkedin.com/in/ritik-hedaoo" target="_blank" rel="noopener noreferrer">
+                LinkedIn Profile
+              </a>
+            </div>
+
+            <div className="contact-box">
+              <FaFileDownload size={24} />
+              <a href="/Ritik resume 2025.pdf" download>
+                Download Resume
+              </a>
+            </div>
+          </div>
+
+          <div className="contact-footer">
+            <p>Crafted with ❤️ by Ritik Hedaoo</p>
+          </div>
+        </section>
+      </FadeInOnScroll>
     </>
   );
 }
